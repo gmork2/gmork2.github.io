@@ -1,0 +1,77 @@
+			#phone
+			{
+				height: 100%;
+				/*width: 50%;*/
+				/*margin-right: 285px;*/
+				/*top: 0;*/
+				right: 50%;
+				z-index: 2;
+				overflow:hidden;
+			}
+			#phone:before,
+			#phone:after
+			{
+			}
+			#phone:before
+			{
+				/*bottom: 50%;*/
+				/*margin-bottom: 350px;*/
+			}
+			#phone:after
+			{
+				/*top: 50%;*/
+				/*margin-top: 350px;*/
+			}
+			#phone > div.phoneBg
+			{
+				background: left center no-repeat transparent;
+				background-image: url(../img/phone/iPhone.png);
+				width: 455px;
+				height: 780px;
+				/*position: absolute;*/
+				/*top: 50%;*/
+				/*right: 35%;*/
+				/*right: -265px;*/
+				z-index: 1;
+			}
+			
+			#phone > div.phoneBg .iframePane {
+			
+				position:relative;
+				top: 123px;
+				width: 307px;
+				height: 538px;
+				margin: 0px 0 0 64px;
+				overflow:hidden;
+			}
+			
+			
+			#phone iframe
+			{
+				box-shadow: 0 0 2px rgba( 0, 0, 0, 0.4 );
+				background: #eee;
+				border: none;
+				width: 324px;
+				height: 538px;
+			}
+
+			@media screen and ( min-width: 950px ) {
+				.smallscreen
+				{
+					display: none;
+				}
+			}
+			@media screen and ( max-width: 949px ) {
+				.widescreen
+				{
+					display: none;
+				}
+				#phone
+				{ 
+				}
+				#page > div
+				{ 
+				}
+			}
+			
+
