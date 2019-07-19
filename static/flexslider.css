@@ -81,7 +81,7 @@ html[xmlns] .slides {
 	height: 30px;
 	margin: -20px 0 0;
 	display: block;
-	background: url(../img/bg_direction_nav.png) no-repeat 0 0;
+	background: url(bg_direction_nav.png) no-repeat 0 0;
 	position: absolute;
 	top: 50%;
 	z-index: 10;
@@ -186,7 +186,7 @@ html[xmlns] .slides {
 /*---------- Custom styles ----------*/
 /*============================================================*/
 #slider-bg {
-	background: url(../img/preview/slider-bg.jpg) no-repeat 50% center;
+	background: url(slider-bg.jpg) no-repeat 50% center;
 	position: relative;
 }
 .image-text-slider {
