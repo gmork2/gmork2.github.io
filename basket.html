@@ -253,7 +253,7 @@
                                 <th class="col-md-1">Precio</th>
                                 <th class="col-md-2">Total</th>
                             </tr>
-                            <form action="basket.html" method="post" class="basket_summary" id="basket_formset">
+                            <form action="basket.html" method="get" class="basket_summary" id="basket_formset">
                                 <input type="hidden" name="csrfmiddlewaretoken" value="Qu3Aj1v2V6sl3qPIxonyiL1Ks1CVOcTp">
                                 <input id="id_form-TOTAL_FORMS" name="form-TOTAL_FORMS" type="hidden" value="1">
                                 <input id="id_form-INITIAL_FORMS" name="form-INITIAL_FORMS" type="hidden" value="1">
@@ -323,7 +323,7 @@
                                     <p id="voucher_form_link">Tengo un código de cupón</p>
                                     <br>
                                     <div id="voucher_form_container">
-                                        <form id="voucher_form" action="basket.html" method="post">
+                                        <form id="voucher_form" action="basket.html" method="get">
                                             <input type="hidden" name="csrfmiddlewaretoken" value="Qu3Aj1v2V6sl3qPIxonyiL1Ks1CVOcTp">
                                             <p>
                                                 <label for="id_code">
@@ -502,7 +502,7 @@
             <div class="row">
                 <div class="span5">
                     <!-- Form -->
-                    <form method="post" action="login.html">
+                    <form method="get" action="login.html">
                         <input type="hidden" name="csrfmiddlewaretoken" value="AllIZCPj7HdpMkn91UrtR5bdsQgfC6re">
                         <fieldset>
                             <p>
