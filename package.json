@@ -1,0 +1,28 @@
+{
+  "name": "gmork2.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gmork2/gmork2.github.io.git"
+  },
+  "author": "gmork2",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gmork2/gmork2.github.io/issues"
+  },
+  "homepage": "https://github.com/gmork2/gmork2.github.io#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-inject": "^5.0.4",
+    "gulp-webserver": "^0.9.1",
+    "require-dir": "^1.2.0"
+  },
+  "dependencies": {
+    "gulp-file-include": "^2.1.0"
+  }
+}
