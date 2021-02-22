@@ -21,6 +21,7 @@ yarn-error.log*
 *.sw?
 
 !.vscode/*.code-snippets
+package-lock.json
 
 # Docs
 /docs/.temp
