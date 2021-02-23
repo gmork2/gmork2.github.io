@@ -53,7 +53,7 @@ Here is CSS structure...
 /*----- 1.1 General styles -----*/
 /*----------------------------------------*/
 body {
-	background: url(pattern1.jpg) repeat #fff;
+	background: url(../img/pattern1.jpg) repeat #fff;
 	font-size: 13px;
 	color: #808080;
 	font-weight: 400;
@@ -223,7 +223,7 @@ a:hover {
 	outline: none;
 }
 .mybtn-arrow span {
-	background: url(cta-btn-arr.png) no-repeat right 0;
+	background: url(../img/cta-btn-arr.png) no-repeat right 0;
 	margin: 0;
 	padding-right: 30px;
 }
@@ -244,13 +244,13 @@ a:hover {
 }
 /*checkmark list*/
 .list-checkmark li {
-	background: url(bullet-checkmark.png) no-repeat 0 4px;
+	background: url(../img/bullet-checkmark.png) no-repeat 0 4px;
 	padding-left: 30px;
 	margin-bottom: 10px;
 }
 /*checkmark list*/
 .list-arrow li {
-	background: url(bullet-arr.png) no-repeat 0 3px;
+	background: url(../img/bullet-arr.png) no-repeat 0 3px;
 	padding-left: 20px;
 	margin-bottom: 10px;
 }
@@ -289,7 +289,7 @@ a:hover {
 	display: inline-block;
 }
 .list-dot li {
-	background: url(dot.png) no-repeat right;
+	background: url(../img/dot.png) no-repeat right;
 	font-size: 11px;
 	padding-right: 10px;
 	margin: 0px 7px 0px 0px !important;
@@ -310,18 +310,18 @@ a:hover {
 	clear: both;
 }
 .divider {
-	background: url(divider-diagonal.png) repeat-x;
+	background: url(../img/divider-diagonal.png) repeat-x;
 	height: 3px;
 	margin: 20px auto;
 }
 .divider-arrow {
-	background: url(feature-divider-arr.png) no-repeat center bottom;
+	background: url(../img/feature-divider-arr.png) no-repeat center bottom;
 	height: 5px;
 	border-top: 1px solid #fff;
 	margin: 10px auto;
 }
 .divider-greyarrow {
-	background: url(ptable-divider-arr.png) no-repeat center bottom;
+	background: url(../img/ptable-divider-arr.png) no-repeat center bottom;
 	height: 5px;
 	border-top: 1px solid #dedede;
 	margin: 20px 0px 20px 0px;
@@ -416,12 +416,12 @@ a:hover {
 /*----- 1.9 Accordion -----*/
 /*----------------------------------------*/
 .accordion-heading a {
-	background: url(accord-plus.png) no-repeat left center;
+	background: url(../img/accord-plus.png) no-repeat left center;
 	padding-left: 40px !important;
 	margin-left: 10px;
 }
 .accordion-heading.in_head a {
-	background: url(accord-minus.png) left center no-repeat
+	background: url(../img/accord-minus.png) left center no-repeat
 }
 /*----------------------------------------*/
 /*----- 1.10 Blockquote -----*/
@@ -528,10 +528,10 @@ blockquote.pull-right {
 	padding: 20px;
 }
 .review {
-	background: url(icon-quote.png) no-repeat right bottom;
+	background: url(../img/icon-quote.png) no-repeat right bottom;
 }
 .info {
-	background: url(icon-info.png) no-repeat right bottom;
+	background: url(../img/icon-info.png) no-repeat right bottom;
 }
 /*----- box-styled (testimonal) -----*/
 .box-styled {
@@ -661,7 +661,7 @@ blockquote.pull-right {
 }
 /*----- twitter -----*/
 .heading-twitter {
-	background: url(icon-chirp-chirp.png) left no-repeat;
+	background: url(../img/icon-chirp-chirp.png) left no-repeat;
 	padding-left: 68px;
 	margin-bottom: 20px;
 	font-size: 14px;
@@ -775,7 +775,7 @@ blockquote.pull-right {
 	-webkit-border-radius: 4px;
 }
 .folio-thumb .zoom, .folio-thumb .link {
-	background: url(zoom.png) 0 0 no-repeat transparent;
+	background: url(../img/zoom.png) 0 0 no-repeat transparent;
 	width: 40px;
 	height: 40px;
 	position:absolute;
@@ -815,7 +815,7 @@ blockquote.pull-right {
 }
 
 .folio-thumb .link {
-	background: url(link.png) 0 0 no-repeat transparent;
+	background: url(../img/link.png) 0 0 no-repeat transparent;
 	position:absolute;
 	right: 60%;
 	left: auto;
@@ -954,7 +954,7 @@ blockquote.pull-right {
 /*----- 2.6 Blog  -----*/
 /*----------------------------------------*/
 .tags li, .error {
-	background: url(dot.png) no-repeat left;
+	background: url(../img/dot.png) no-repeat left;
 	padding-left: 10px;
 	margin-right: 7px;
 	font-size: 10px !important;
@@ -995,7 +995,7 @@ blockquote.pull-right {
 /*----------------------------------------*/
 /*address*/
 .addrs {
-	background: url(world-map.png) no-repeat center top;
+	background: url(../img/world-map.png) no-repeat center top;
 	min-height: 120px;
 }
 .addrs table th {
@@ -1362,7 +1362,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
 	box-shadow:  0 1px 0 0 rgba(0, 0, 0, .2);
 }
 .ddsmoothmenu ul li ul li {
-	background: url(nav-item-divider.jpg) repeat-x bottom;
+	background: url(../img/nav-item-divider.jpg) repeat-x bottom;
 	padding: 12px 10px 13px 20px;
 	box-shadow: none !important;
 	display: list-item;
