@@ -1,0 +1,39 @@
+<!--modal for login form starts -->
+    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Login con OrangeMarket</h3>
+        </div>
+        <div class="modal-body">
+            <!--form starts-->
+            <div class="row">
+                <div class="span5">
+                    <!-- Form -->
+                    <form method="get" action="login.html">
+                        <input type="hidden" name="csrfmiddlewaretoken" value="AllIZCPj7HdpMkn91UrtR5bdsQgfC6re">
+                        <fieldset>
+                            <p>
+                                <label for="id_username">Nombre de usuario</label>
+                                <input id="id_username" maxlength="254" name="username" type="text">
+                            </p>
+                            <p>
+                                <label for="id_password">Contraseña</label>
+                                <input id="id_password" name="password" type="password">
+                            </p>
+                            <p>
+                                <input type="submit" value="Login" class="submit">
+                            </p>
+                        </fieldset>
+                    </form>
+                    <div class="clearfix"></div>
+                    <p>
+                        <a href="recover.html">
+                            ¿Olvidó su usuario / contraseña?
+                        </a> | <a href="provider.html">Proveedores de Autentificación</a>
+                    </p>
+                </div>
+            </div>
+            <!--form starts-->
+        </div>
+    </div>
+    <!--modal for login form ends -->
