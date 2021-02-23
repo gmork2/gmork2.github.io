@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html class="js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths js"
+      style="" lang="es">
+<head>
+    @@include('includes/_meta.html', {
+        "created": "6th Jul 2019 02:07",
+        "description": "Proveedor de soluciones web, publicidad, marketing, proyectos de organización y planes de negocio",
+        "keywords": "web, publicidad, marketing, proyectos, negocios",
+        "author": "Orange Market",
+        "viewport": {
+            "width": "device-width",
+            "initial-scale": 1,
+            "maximum-scale": 1,
+        }
+    })
+    @@include('includes/_title.html', {"title": "Inicio"})
+    @@include('includes/_icon.html')
+
+    <!-- inject:css -->
+    <!-- endinject -->
+
+    <script async="" src="assets/js/analytics.js"></script>
+    <script src="assets/js/jquery-1.js" type="text/javascript"></script>
+    <script src="assets/js/modernizr.js" type="text/javascript"></script>
+    <script src="assets/js/prettify.js" type="text/javascript"></script>
+
+    @@include('includes/_analytics.html')
+    <script src="assets/js/prompt.js"></script>
+</head>
+
+<body id="default">
+    @@include('includes/components/header.html')
+
+    <!-- content starts
+    ================================================== -->
+    <section id="content" class="clearfix">
+
+		<!-- ======= content-intro starts ======= -->
+		<div id="content-intro">
+			<div class="container">
+				<div class="row">
+					<div class="span12">
+						<h1>Registro</h1>
+
+						<!--breadcrumb starts-->
+						<ul class="breadcrumbs breadcrumb">
+							<li><a href="pages.html">Páginas</a></li>
+                            <span>/</span>
+                            <li><a href="catalogue.html">Shop</a></li>
+                            <span>/</span>
+                            <li class="active">Registro</li>
+						</ul>
+						<!--breadcrumb ends-->
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- ======= content-intro ends ======= -->
+
+    	<!-- ======= general row starts ======= -->
+	    <div class="container row-general">
+	        <div class="row">
+	            <div class="span12" id="main-content">
+                    <ul class="nav nav-tabs">
+                        <li><a href="search.html"><i class="icon-search"></i></a></li>
+                        <li class="">
+                            <a href="catalogue.html">
+                                <i class="icon-bookmark"></i>
+                                Todos los productos
+                            </a>
+                        </li>
+                        <li class="">
+                            <a tabindex="-1" href="catalogue.html">
+                                <i class="icon-bookmark"></i>
+                                Sitio Web
+                            </a>
+                        </li>
+	                    <li><a href="offers.html"><i class="icon-gift"></i>Ofertas</a></li>
+                    </ul>
+                    <strong>
+                        <span class="nav_info pull-right">
+                            Total: 0,00&nbsp;£
+                        </span>
+                    </strong>
+                    <div id="messages">
+
+                    </div>
+                </div>
+	        </div>
+
+            <div class="row">
+                <div id="main-content_" class="span6">
+                    <h3>Iniciar sesión</h3>
+                    <p>
+                        Inicie sesión con su dirección de correo electrónico.
+                    </p>
+                    <br>
+                    <form id="login_form" action="profile.html" method="get">
+                        <fielset>
+                            <input type="hidden" name="csrfmiddlewaretoken" value="AllIZCPj7HdpMkn91UrtR5bdsQgfC6re">
+                            <p>
+                                <label for="id_login-username">
+                                    Correo electrónico*
+                                </label>
+                                <input class="form-control" id="id_login-username" name="login-username" type="email">
+                            </p>
+                            <p>
+                                <label for="id_login-password">
+                                    Contraseña*
+                                </label>
+                                <input class="form-control" id="id_login-password" name="login-password" type="password">
+                            </p>
+                            <input id="id_login-redirect_url" name="login-redirect_url" type="hidden">
+                            <button name="login_submit" type="submit" value="Log In" class="submit" data-loading-text="Iniciando sesión...">Iniciar sesión</button>
+                        </fielset>
+                    </form>
+		        </div>
+                <div class="span6">
+                    <div id="sidebar-right">
+                        <h3>Registrar</h3>
+                        <p>Registre una cuenta de cliente usando su dirección de correo electrónico.</p>
+                        <br />
+                        <form id="register_form" action="profile.html" method="get">
+                            <fieldset>
+                                <input type="hidden" name="csrfmiddlewaretoken" value="AllIZCPj7HdpMkn91UrtR5bdsQgfC6re">
+                                <p>
+                                    <label for="id_registration-email">
+                                        Correo electrónico*
+                                    </label>
+                                    <input class="form-control" id="id_registration-email" name="registration-email" type="email">
+                                </p>
+                                <p>
+                                    <label for="id_registration-password1">
+                                        Contraseña*
+                                    </label>
+                                    <input class="form-control" id="id_registration-password1" name="registration-password1" type="password">
+                                </p>
+                                <p>
+                                    <label for="id_registration-password2">
+                                        Confirme contraseña*
+                                    </label>
+                                    <input class="form-control" id="id_registration-password2" name="registration-password2" type="password">
+                                </p>
+                                <input id="id_registration-redirect_url" name="registration-redirect_url" type="hidden">
+                                <button name="registration_submit" type="submit" value="Register" class="submit" data-loading-text="Registrando ...">Registrar</button>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+	            <br /><br />
+            </div>
+
+		</div>
+		<!-- ======= general row ends ======= -->
+
+    </section>
+    <!-- content ends
+    ================================================== -->
+
+    @@include('includes/components/footer.html')
+    @@include('includes/components/modal.html')
+
+    <!-- inject:js -->
+    <!-- endinject -->
+    <script>
+        $(document).ready(function(){
+            $(".changecolor").switchstylesheet( { seperator:"color"} );
+            $('.show-theme-options').click(function(){
+                $(this).parent().toggleClass('open');
+                return false;
+            });
+        });
+
+        $(window).bind("load", function() {
+            $('.show-theme-options').delay(2000).trigger('click');
+        });
+    </script>
+    <!-- extra_script starts -->
+
+    <!-- extra_scripts ends -->
+    <script type="text/javascript">
+        $(function() {
+
+        });
+    </script>
+</body>
+</html>
