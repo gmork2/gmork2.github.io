@@ -1486,7 +1486,7 @@ table {
  *margin-right: .3em;
  line-height: 14px;
  vertical-align: text-top;
- background-image: url("glyphicons-halflings.png");
+ background-image: url("../img/glyphicons-halflings.png");
  background-position: 14px 14px;
  background-repeat: no-repeat;
 }
@@ -1494,7 +1494,7 @@ table {
 /* White icons with optional class, or on hover/active states of certain elements */
 
 .icon-white, .nav-tabs > .active > a > [class^="icon-"], .nav-tabs > .active > a > [class*=" icon-"], .nav-pills > .active > a > [class^="icon-"], .nav-pills > .active > a > [class*=" icon-"], .nav-list > .active > a > [class^="icon-"], .nav-list > .active > a > [class*=" icon-"], .navbar-inverse .nav > .active > a > [class^="icon-"], .navbar-inverse .nav > .active > a > [class*=" icon-"], .dropdown-menu > li > a:hover > [class^="icon-"], .dropdown-menu > li > a:hover > [class*=" icon-"], .dropdown-menu > .active > a > [class^="icon-"], .dropdown-menu > .active > a > [class*=" icon-"] {
- background-image: url("glyphicons-halflings-white.png");
+ background-image: url("../img/glyphicons-halflings-white.png");
 }
 .icon-glass {
 	background-position: 0 0;
