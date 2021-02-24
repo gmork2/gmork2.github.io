@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html class="js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths js"
+      style="" lang="es">
+<head>
+    @@include('includes/_meta.html', {
+        "created": "6th Jul 2019 02:07",
+        "description": "Proveedor de soluciones web, publicidad, marketing, proyectos de organización y planes de negocio",
+        "keywords": "web, publicidad, marketing, proyectos, negocios",
+        "author": "Orange Market",
+        "viewport": {
+            "width": "device-width",
+            "initial-scale": 1,
+            "maximum-scale": 1,
+        }
+    })
+    @@include('includes/_title.html', {"title": "Inicio"})
+    @@include('includes/_icon.html')
+
+    <!-- inject:css -->
+    <!-- endinject -->
+
+    <script async="" src="assets/js/analytics.js"></script>
+    <script src="assets/js/jquery-1.js" type="text/javascript"></script>
+    <script src="assets/js/modernizr.js" type="text/javascript"></script>
+    <script src="assets/js/prettify.js" type="text/javascript"></script>
+
+    @@include('includes/_analytics.html')
+    <script src="assets/js/prompt.js"></script>
+</head>
+
+<body id="default">
+    @@include('includes/components/header.html')
+
+<!-- content starts
+    ================================================== -->
+    <section id="content" class="clearfix">
+        <!-- ======= content-intro starts ======= -->
+		<div id="content-intro">
+			<div class="container">
+				<div class="row">
+					<div class="span12">
+						<h1>Search</h1>
+
+						<!--breadcrumb starts-->
+						<ul class="breadcrumbs breadcrumb">
+							<li><a href="pages.html">Páginas</a></li>
+                            <span>/</span>
+                            <li><a href="catalogue.html">Shop</a></li>
+                            <span>/</span>
+                            <li class="active">Search</li>
+						</ul>
+						<!--breadcrumb ends-->
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- ======= content-intro ends ======= -->
+
+    	<!-- ======= general row starts ======= -->
+	    <div class="container row-general">
+	        <div class="row">
+	            <div class="span12" id="main-content">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="search.html"><i class="icon-search"></i></a></li>
+                        <li class="">
+                            <a href="catalogue.html">
+                                <i class="icon-bookmark"></i>
+                                Todos los productos
+                            </a>
+                        </li>
+                        <li class="">
+                            <a tabindex="-1" href="catalogue.html">
+                                <i class="icon-bookmark"></i>
+                                Sitio Web
+                            </a>
+                        </li>
+	                    <li><a href="offers.html"><i class="icon-gift"></i>Ofertas</a></li>
+                    </ul>
+
+                    <div id="messages">
+
+                    </div>
+                </div>
+	        </div>
+            <br />
+            <div class="row">
+                <div class="span12">
+                    <form id="searchform" method="get" action="result.html">
+                        <fieldset>
+                            <p>
+                                <input class="form-control" id="id_q" name="q" placeholder="Buscar" tabindex="1" type="search">
+                                <input type="submit" value="Buscar" class="search-submit">
+                            </p>
+                        </fieldset>
+                    </form>
+                    <br /><br />
+                    <h2>No hubo resultados.</h2>
+
+
+                    <!--divider here-->
+                    <div class="divider"></div>
+                    <p>
+                        La cadena de texto que ha introducido contiene errores
+                        o no se encuentra en ninguna de las entradas del blog.
+                        Si desea obtener información acerca de
+                        uso y sintaxis de nuestro motor de búsqueda, puede
+                        consultar el siguiente enlace.
+                    </p>
+                    <p><a href="support.html" class="mybtn">Más Información</a></p>
+
+                    <br /><br />
+                </div>
+            </div>
+            <div class="row">
+                <div class="span12">
+                    <div id="promotions">
+
+                    </div>
+
+                    <div id="content_inner"></div>
+                </div>
+            </div>
+        </div>
+		<!-- ======= general row ends ======= -->
+
+    </section>
+    <!-- content ends
+    ================================================== -->
+
+    @@include('includes/components/footer.html')
+    @@include('includes/components/modal.html')
+
+    <!-- inject:js -->
+    <!-- endinject -->
+    <script>
+        $(document).ready(function(){
+            $(".changecolor").switchstylesheet( { seperator:"color"} );
+            $('.show-theme-options').click(function(){
+                $(this).parent().toggleClass('open');
+                return false;
+            });
+        });
+
+        $(window).bind("load", function() {
+            $('.show-theme-options').delay(2000).trigger('click');
+        });
+    </script>
+    <!-- extra_script starts -->
+
+    <!-- extra_scripts ends -->
+    <script type="text/javascript">
+        $(function() {
+
+        });
+    </script>
+</body>
+</html>
