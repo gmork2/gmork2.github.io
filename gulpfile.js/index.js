@@ -53,5 +53,5 @@ function insertContent(cb) {
 }
 
 exports.test = test;
-exports.serve = dir.server.serve
+exports.serve = series(dir.resources.copy, insertContent, injectResources, dir.server.serve)
 exports.build = series(dir.resources.copy, insertContent, injectResources)
