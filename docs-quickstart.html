@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="gmork2 — quickstart: set an API key and run your first chat.">
+  <title>gmork2 — Quickstart</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="docs">
+  <main class="page">
+    <div class="docs-layout">
+      <aside class="docs-sidebar" data-docs-page="quickstart"></aside>
+      <article class="docs-content docs">
+        <h1>Quickstart</h1>
+        <p class="docs-lead">Set an API key and run your first chat in under a minute.</p>
+
+        <h3>1. Set your API key</h3>
+        <p>Paste your key into the <strong>API key</strong> panel and press <strong>Set key ▸</strong>, or run this in the terminal (replace the placeholder):</p>
+        <pre class="doc-code"><code>set_key("your-key")</code></pre>
+
+        <h3>2. Run your first chat</h3>
+        <p>Pick a provider, then press <strong>Run ▶</strong> (the code runs in the terminal):</p>
+
+        <div class="doc-tabs">
+          <div class="doc-tabs-header">
+            <button type="button" class="doc-tab-btn active" data-tab="deepseek">DeepSeek</button>
+            <button type="button" class="doc-tab-btn" data-tab="openrouter">OpenRouter</button>
+            <button type="button" class="doc-tab-btn" data-tab="openai">OpenAI</button>
+          </div>
+          <div class="doc-tab-panel active" data-tab-panel="deepseek">
+            <div class="doc-example">
+              <pre class="doc-code"><code>resp = await client.chat.completions.create(
+    model="deepseek-flash",
+    messages=[{"role": "user", "content": "Hello!"}],
+)
+print(resp.choices[0].message.content)</code></pre>
+              <div class="doc-example-actions">
+                <button type="button" class="doc-btn copy-example">Copy</button>
+                <button type="button" class="doc-btn run run-example">Run ▶</button>
+              </div>
+            </div>
+          </div>
+          <div class="doc-tab-panel" data-tab-panel="openrouter">
+            <div class="doc-example">
+              <pre class="doc-code"><code>resp = await openrouter_client.chat.completions.create(
+    model="openai/gpt-4o-mini",
+    messages=[{"role": "user", "content": "Hello!"}],
+)
+print(resp.choices[0].message.content)</code></pre>
+              <div class="doc-example-actions">
+                <button type="button" class="doc-btn copy-example">Copy</button>
+                <button type="button" class="doc-btn run run-example">Run ▶</button>
+              </div>
+            </div>
+          </div>
+          <div class="doc-tab-panel" data-tab-panel="openai">
+            <div class="doc-example">
+              <pre class="doc-code"><code>resp = await openai_client.chat.completions.create(
+    model="gpt-4o-mini",
+    messages=[{"role": "user", "content": "Hello!"}],
+)
+print(resp.choices[0].message.content)</code></pre>
+              <div class="doc-example-actions">
+                <button type="button" class="doc-btn copy-example">Copy</button>
+                <button type="button" class="doc-btn run run-example">Run ▶</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3>3. Multi-turn conversation</h3>
+        <div class="doc-example">
+          <pre class="doc-code"><code>convo.reset()
+reply = await convo.say("What can you do?")
+print(reply)</code></pre>
+          <div class="doc-example-actions">
+            <button type="button" class="doc-btn copy-example">Copy</button>
+            <button type="button" class="doc-btn run run-example">Run ▶</button>
+          </div>
+        </div>
+      </article>
+      <aside class="docs-sidebar-right"></aside>
+    </div>
+  </main>
+
+  <script src="js/app.js"></script>
+  <script src="js/shell.js"></script>
+  <script src="js/docs.js"></script>
+</body>
+</html>

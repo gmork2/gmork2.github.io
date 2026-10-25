@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="gmork2 — compatible LLM providers and their base URLs.">
+  <title>gmork2 — Providers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="docs">
+  <main class="page">
+    <div class="docs-layout">
+      <aside class="docs-sidebar" data-docs-page="providers"></aside>
+      <article class="docs-content docs">
+        <h1>Providers</h1>
+        <p class="docs-lead">Any OpenAI-compatible endpoint works. These are pre-configured.</p>
+
+        <table class="doc-table">
+          <thead>
+            <tr><th>Provider</th><th>base_url</th><th>CORS</th><th>Notes</th><th>Docs</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>DeepSeek</td><td>https://api.deepseek.com</td><td>Yes</td><td>default</td><td><a href="https://api-docs.deepseek.com/" target="_blank" rel="noopener">docs</a></td></tr>
+            <tr><td>OpenAI</td><td>https://api.openai.com/v1</td><td>Yes</td><td></td><td><a href="https://platform.openai.com/docs/" target="_blank" rel="noopener">docs</a></td></tr>
+            <tr><td>OpenRouter</td><td>https://openrouter.ai/api/v1</td><td>Yes</td><td>aggregates many models</td><td><a href="https://openrouter.ai/docs" target="_blank" rel="noopener">docs</a></td></tr>
+            <tr><td>Groq</td><td>https://api.groq.com/openai/v1</td><td>Yes</td><td></td><td><a href="https://console.groq.com/docs" target="_blank" rel="noopener">docs</a></td></tr>
+            <tr><td>Ollama</td><td>http://localhost:11434/v1</td><td>local</td><td>requires Ollama running locally</td><td><a href="https://github.com/ollama/ollama" target="_blank" rel="noopener">docs</a></td></tr>
+          </tbody>
+        </table>
+
+        <div class="doc-info"><strong>Tip:</strong> <code>make_client()</code> accepts any provider name in this table, or an arbitrary OpenAI-compatible base URL.</div>
+
+        <h3>Use any provider</h3>
+        <div class="doc-example">
+          <pre class="doc-code"><code>c = make_client("openrouter")                        # by name
+c = make_client("https://api.groq.com/openai/v1")   # by URL</code></pre>
+          <div class="doc-example-actions">
+            <button type="button" class="doc-btn copy-example">Copy</button>
+            <button type="button" class="doc-btn run run-example">Run ▶</button>
+          </div>
+        </div>
+      </article>
+      <aside class="docs-sidebar-right"></aside>
+    </div>
+  </main>
+
+  <script src="js/app.js"></script>
+  <script src="js/shell.js"></script>
+  <script src="js/docs.js"></script>
+</body>
+</html>

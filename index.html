@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="gmork2 — AI model radar: Hugging Face trends, OpenRouter prices and benchmarks, an embedded Python interpreter, and gmork2's repositories.">
+  <title>gmork2 — AI model radar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/terminal.css">
+</head>
+<body data-page="home">
+  <main class="page" id="page">
+    <div class="route active" id="route-home" data-route="home">
+    <section class="hero">
+      <h1 class="hero-title">One Python interpreter <br>to deploy any agent, <br>anywhere.</h1>
+      <p class="hero-subtitle">
+        A real Python interpreter with an OpenAI-compatible client —
+        write, run, and deploy AI agents entirely in the browser, for
+        <a href="https://api-docs.deepseek.com/" target="_blank" rel="noopener">DeepSeek</a>,
+        <a href="https://platform.openai.com/" target="_blank" rel="noopener">OpenAI</a>,
+        <a href="https://openrouter.ai/" target="_blank" rel="noopener">OpenRouter</a> and more.
+      </p>
+    </section>
+
+    <div class="lens-strip" id="lens-strip" role="tablist" aria-label="Diagram lenses">
+      <button class="lens active" data-lens="all">All</button>
+      <button class="lens" data-lens="architecture">Architecture</button>
+      <button class="lens" data-lens="workflow">Workflow</button>
+      <button class="lens" data-lens="sequence">Sequence</button>
+      <button class="lens" data-lens="dataflow">Data flow</button>
+      <button class="lens" data-lens="lifecycle">Lifecycle</button>
+      <button class="lens" data-lens="erd">Entity-relationship</button>
+    </div>
+
+    <section class="workspace" id="workspace">
+      <div class="side-col">
+        <aside class="panel prompt-panel">
+          <div class="panel-head">
+            <h2>API key</h2>
+            <span class="dot dot-cyan"></span>
+          </div>
+          <textarea id="key-input" rows="6" placeholder="Paste your API key (DeepSeek / OpenAI / OpenRouter) — or set it from the terminal with set_key()"></textarea>
+          <div class="examples">
+            <span class="examples-label">store:</span>
+            <span class="chip active">Don't store</span>
+          </div>
+          <button id="set-key" class="run-btn">Set key ▸</button>
+          <div id="status" class="status-line"></div>
+        </aside>
+
+        <aside class="panel share-panel">
+          <div class="panel-head">
+            <h2>Share</h2>
+            <span class="dot dot-violet"></span>
+          </div>
+          <div class="share-block">
+            <p class="share-desc">Copy this snippet to embed the interpreter on any website.</p>
+            <div class="share-row">
+              <input class="embed-box" id="embed-snippet" type="text" readonly spellcheck="false">
+              <button class="copy-btn" id="embed-copy" type="button" title="Copy" aria-label="Copy">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg>
+              </button>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <section class="panel viewer-panel" id="viewer-panel">
+        <div class="viewer-head">
+          <div class="viewer-meta">
+            <div class="viewer-kicker">Embedded interpreter</div>
+            <h2 class="viewer-title">Terminal</h2>
+          </div>
+          <div class="viewer-controls">
+            <button id="reset-llm" class="icon-btn" type="button" title="Reset LLM history">↺</button>
+            <button id="clear-key" class="icon-btn" type="button" title="Clear API key">⌫</button>
+            <button id="maximize-terminal" class="icon-btn" type="button" title="Maximize">⤢</button>
+          </div>
+        </div>
+        <div class="viewer-body">
+          <div class="terminal-root" id="terminal-root"></div>
+        </div>
+      </section>
+
+      <aside class="panel trace-panel">
+        <div class="panel-head">
+          <h2>ENVIRONMENT</h2>
+          <span class="dot dot-emerald"></span>
+        </div>
+        <div id="trace" class="trace-list"></div>
+      </aside>
+    </section>
+    </div>
+  </main>
+
+  <script src="js/app.js"></script>
+  <script src="js/shell.js"></script>
+  <script src="js/terminal.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

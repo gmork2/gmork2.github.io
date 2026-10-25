@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="gmork2 — docs overview for the in-browser Python interpreter with an OpenAI-compatible LLM client.">
+  <title>gmork2 — Docs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="docs">
+  <main class="page">
+    <div class="docs-layout">
+      <aside class="docs-sidebar" data-docs-page="overview"></aside>
+      <article class="docs-content docs">
+        <h1>Overview</h1>
+        <p class="docs-lead">An in-browser Python interpreter with an OpenAI-compatible LLM client, powered by Pyodide.</p>
+
+        <p>The terminal runs <strong>CPython</strong> (compiled to WebAssembly via <a href="https://pyodide.org/" target="_blank" rel="noopener">Pyodide</a>) inside a Web Worker, and exposes a client compatible with the <strong>OpenAI SDK</strong>. It works with any provider that exposes an OpenAI-compatible API — DeepSeek, OpenAI, OpenRouter, Groq, and more.</p>
+
+        <h3>Key features</h3>
+        <ul>
+          <li>OpenAI-SDK-compatible API: <code>client.chat.completions.create(...)</code></li>
+          <li>Runs entirely in the browser — no backend, no build step</li>
+          <li>Provider presets and <code>make_client()</code></li>
+          <li>Live namespace inspector (the <strong>ENVIRONMENT</strong> panel)</li>
+        </ul>
+
+        <h3>Get started</h3>
+        <p>Read the <a href="index.html#/docs/quickstart">Quickstart</a> to run your first chat, or jump to the <a href="index.html#/docs/api">API reference</a> for the full surface.</p>
+      </article>
+      <aside class="docs-sidebar-right"></aside>
+    </div>
+  </main>
+
+  <script src="js/app.js"></script>
+  <script src="js/shell.js"></script>
+  <script src="js/docs.js"></script>
+</body>
+</html>

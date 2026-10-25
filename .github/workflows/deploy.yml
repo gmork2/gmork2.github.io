@@ -1,0 +1,103 @@
+name: Build and deploy
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # Cada 6 horas, para mantener fresca la lista de repositorios sin pushes manuales.
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Update repositories data
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p data
+          curl -fsSL \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/users/gmork2/repos?per_page=100&sort=updated" \
+            -o /tmp/repos.json
+          python3 - <<'PY'
+          import json
+          from datetime import datetime, timezone
+
+          data = json.load(open('/tmp/repos.json'))
+          out = []
+          for r in data:
+              out.append({
+                  "name": r.get("name"),
+                  "full_name": r.get("full_name"),
+                  "html_url": r.get("html_url"),
+                  "description": r.get("description"),
+                  "language": r.get("language"),
+                  "stargazers_count": r.get("stargazers_count"),
+                  "forks_count": r.get("forks_count"),
+                  "open_issues_count": r.get("open_issues_count"),
+                  "fork": r.get("fork"),
+                  "archived": r.get("archived"),
+                  "created_at": r.get("created_at"),
+                  "updated_at": r.get("updated_at"),
+                  "pushed_at": r.get("pushed_at"),
+                  "topics": r.get("topics"),
+                  "homepage": r.get("homepage"),
+              })
+
+          payload = {
+              "generated_at": datetime.now(timezone.utc).isoformat(),
+              "source": "https://api.github.com/users/gmork2/repos",
+              "repositories": out,
+          }
+          json.dump(payload, open('data/repos.json', 'w'), indent=2, ensure_ascii=False)
+          print(f"wrote {len(out)} repositories")
+          PY
+
+      - name: Commit repositories data (if changed)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/repos.json
+          if git diff --cached --quiet; then
+            echo "data/repos.json unchanged"
+          else
+            git commit -m "chore: refresh repositories data"
+            git push || echo "push skipped"
+          fi
+
+      - name: Stage site
+        run: |
+          rm -rf _site
+          mkdir -p _site
+          cp -r css js data _site/
+          cp *.html _site/
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

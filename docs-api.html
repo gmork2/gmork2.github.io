@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="gmork2 — API reference for the OpenAI-compatible terminal shim.">
+  <title>gmork2 — API Reference</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="docs">
+  <main class="page">
+    <div class="docs-layout">
+      <aside class="docs-sidebar" data-docs-page="api"></aside>
+      <article class="docs-content docs">
+        <h1>API Reference</h1>
+        <p class="docs-lead">The full surface of the OpenAI-compatible shim.</p>
+
+        <h3>OpenAI(api_key=None, base_url="https://api.deepseek.com")</h3>
+        <p>Creates a client. <code>api_key</code> is optional: if omitted it is read from <code>os.environ["OPENAI_API_KEY"]</code> (set by <code>set_key()</code> or the "Set key" button). <code>base_url</code> defaults to DeepSeek.</p>
+        <pre class="doc-code"><code>client = OpenAI(api_key="...", base_url="https://api.deepseek.com")
+client.api_key   # str
+client.base_url  # str
+client.chat      # Chat</code></pre>
+
+        <h3>client.chat.completions.create(*, model, messages, stream=False, **kwargs)</h3>
+        <p>Sends a chat request and returns a <code>ChatCompletion</code>. Extra keyword arguments (e.g. <code>temperature</code>, <code>max_tokens</code>) are forwarded to the API as-is.</p>
+        <pre class="doc-code"><code>resp = await client.chat.completions.create(
+    model="deepseek-flash",
+    messages=[{"role": "user", "content": "Hello"}],
+)</code></pre>
+
+        <h3>Response objects</h3>
+        <table class="doc-table">
+          <thead>
+            <tr><th>Type</th><th>Attributes</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>ChatCompletion</code></td><td><code>.id</code>, <code>.model</code>, <code>.choices</code> (list), <code>.usage</code></td></tr>
+            <tr><td><code>Choice</code></td><td><code>.index</code>, <code>.message</code>, <code>.finish_reason</code></td></tr>
+            <tr><td><code>ChatCompletionMessage</code></td><td><code>.role</code>, <code>.content</code></td></tr>
+          </tbody>
+        </table>
+
+        <h3>make_client(provider="deepseek", api_key=None)</h3>
+        <p>Returns a client for a provider name (from <code>PROVIDERS</code>) or a full base URL.</p>
+        <pre class="doc-code"><code>c = make_client("openrouter")
+c = make_client("https://api.groq.com/openai/v1")</code></pre>
+
+        <h3>set_key(key)</h3>
+        <p>Stores the API key in <code>os.environ["OPENAI_API_KEY"]</code> (memory only).</p>
+        <pre class="doc-code"><code>set_key("your-key")</code></pre>
+
+        <h3>Conversation(client=client, model="deepseek-flash", system=None)</h3>
+        <p>A stateful helper that keeps a running <code>messages</code> list.</p>
+        <pre class="doc-code"><code>convo = Conversation(model="deepseek-flash")
+convo.messages          # list
+reply = await convo.say("Hello")   # str
+convo.reset()           # clears messages</code></pre>
+
+        <h3>reset_history()</h3>
+        <p>Clears the pre-built <code>convo</code>. Equivalent to the terminal's "↺" button.</p>
+
+        <h3>Pre-built objects</h3>
+        <table class="doc-table">
+          <thead>
+            <tr><th>Name</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>client</code> / <code>deepseek_client</code></td><td>DeepSeek client (default)</td></tr>
+            <tr><td><code>openai_client</code></td><td>OpenAI client</td></tr>
+            <tr><td><code>openrouter_client</code></td><td>OpenRouter client</td></tr>
+            <tr><td><code>groq_client</code></td><td>Groq client</td></tr>
+            <tr><td><code>convo</code></td><td><code>Conversation</code> instance</td></tr>
+            <tr><td><code>PROVIDERS</code></td><td>dict of provider → base_url</td></tr>
+          </tbody>
+        </table>
+      </article>
+      <aside class="docs-sidebar-right"></aside>
+    </div>
+  </main>
+
+  <script src="js/app.js"></script>
+  <script src="js/shell.js"></script>
+  <script src="js/docs.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="archx">
+  <title>archx — agentic diagrams, live</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/sample/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">◆</span>
+      <span class="brand-name">archx</span>
+      <span class="brand-tag">agentic · diagrams · live</span>
+    </div>
+    <nav class="nav">
+      <a href="#workspace" class="nav-link active">Workbench</a>
+      <a href="#artifacts" class="nav-link">Proof Lab</a>
+      <a href="#guide" class="nav-link">Guide</a>
+    </nav>
+    <div class="topbar-actions">
+      <button id="theme-toggle" class="icon-btn" title="Toggle theme">◐</button>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="hero" id="guide">
+      <h1 class="hero-title">Proof, not promises.</h1>
+      <p class="hero-subtitle">
+        Type a prompt. The agent executes tools and <strong>every action is rendered
+        live</strong> as an interactive, animated archify diagram — not a mockup.
+      </p>
+      <div class="lens-strip" id="lens-strip" role="tablist" aria-label="Diagram lenses">
+        <button class="lens active" data-lens="all">All</button>
+        <button class="lens" data-lens="architecture">Architecture</button>
+        <button class="lens" data-lens="workflow">Workflow</button>
+        <button class="lens" data-lens="sequence">Sequence</button>
+        <button class="lens" data-lens="dataflow">Data flow</button>
+        <button class="lens" data-lens="lifecycle">Lifecycle</button>
+        <button class="lens" data-lens="erd">Entity-relationship</button>
+      </div>
+    </section>
+
+    <section class="workspace" id="workspace">
+      <aside class="panel prompt-panel">
+        <div class="panel-head">
+          <h2>Prompt</h2>
+          <span class="dot dot-cyan"></span>
+        </div>
+        <textarea id="prompt" rows="6" placeholder="Describe what you want the agent to do, e.g. &quot;Plan a CI/CD release pipeline and render it as a workflow.&quot;"></textarea>
+        <div class="examples">
+          <span class="examples-label">try:</span>
+          <button class="chip" data-prompt="Plan a CI/CD release pipeline and render it as a workflow diagram.">CI/CD pipeline</button>
+          <button class="chip" data-prompt="Draw the architecture of a three-tier web app with edge delivery.">3-tier web app</button>
+          <button class="chip" data-prompt="Compute 2^10 and show the steps you took as a workflow.">compute + trace</button>
+        </div>
+        <button id="run" class="run-btn">Run agent ▸</button>
+        <div id="status" class="status-line"></div>
+      </aside>
+
+      <section class="panel viewer-panel">
+        <div class="viewer-head">
+          <div class="viewer-meta">
+            <div class="viewer-kicker" id="viewer-kicker">Live artifact</div>
+            <h2 class="viewer-title" id="viewer-title">Waiting for a run…</h2>
+            <div class="viewer-subtitle" id="viewer-subtitle">Submit a prompt to generate a diagram.</div>
+          </div>
+          <div class="viewer-controls">
+            <button id="motion-toggle" class="icon-btn" title="Live motion">▶</button>
+          </div>
+        </div>
+        <div class="viewer-body">
+          <iframe id="diagram-frame" title="Archify diagram" hidden></iframe>
+          <div id="empty-state" class="empty-state">
+            <span class="empty-mark">◇</span>
+            <p>No artifact yet.</p>
+            <p class="empty-sub">The agent will draw here, in real time.</p>
+          </div>
+        </div>
+        <div class="viewer-foot" id="viewer-foot">
+          <span class="receipt-badge">— checks pending</span>
+        </div>
+      </section>
+
+      <aside class="panel trace-panel">
+        <div class="panel-head">
+          <h2>Live trace</h2>
+          <span class="dot dot-emerald"></span>
+        </div>
+        <div id="trace" class="trace-list"></div>
+        <div id="answer" class="answer-box"></div>
+      </aside>
+    </section>
+
+    <section class="artifacts" id="artifacts">
+      <div class="panel-head">
+        <h2>Artifacts</h2>
+        <span class="receipt-badge" id="artifact-count">0 / 0</span>
+      </div>
+      <div id="artifact-cards" class="cards"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>archx · built on FastAPI + LangChain · rendered by archify (MIT)</span>
+    <span class="footer-links">
+      <a href="https://github.com/tt-a1i/archify" target="_blank" rel="noopener">archify</a> ·
+      <a href="https://archify.si/gallery" target="_blank" rel="noopener">gallery</a>
+    </span>
+  </footer>
+
+  <script src="/sample/app.js"></script>
+</body>
+</html>

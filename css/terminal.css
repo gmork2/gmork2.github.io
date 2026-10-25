@@ -1,0 +1,41 @@
+/* Terminal component (shared by the app shell and terminal-llm.html) */
+.term {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  background: #111;
+  color: #ddd;
+  font: 13px/1.4 "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+.term-out {
+  flex: 1;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  padding: 12px;
+}
+.term-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px 12px;
+  border-top: 1px solid #2a2a30;
+}
+.term-prompt {
+  flex: none;
+  display: inline-flex;
+  color: #8b5cf6;
+}
+.term-prompt svg { width: 16px; height: 16px; display: block; }
+.term-in {
+  flex: 1;
+  background: transparent;
+  color: inherit;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  resize: none;
+}
+.term .cmd { color: #8b5cf6; }
+.term .err { color: #ff7b72; }

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="gmork2 — installation and running instructions for the in-browser interpreter.">
+  <title>gmork2 — Installation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="docs">
+  <main class="page">
+    <div class="docs-layout">
+      <aside class="docs-sidebar" data-docs-page="installation"></aside>
+      <article class="docs-content docs">
+        <h1>Installation</h1>
+        <p class="docs-lead">There is nothing to install: the interpreter is loaded and run entirely in the browser.</p>
+
+        <p>The page loads <strong>Pyodide</strong> (CPython compiled to WebAssembly) from a CDN and runs it inside a Web Worker. No server, package manager, or build step is required.</p>
+
+        <div class="doc-note"><strong>Requirements:</strong> a modern browser with Web Worker + WebAssembly support, served over HTTP(S). Opening the files via <code>file://</code> will not work because browsers block Web Workers on the local filesystem.</div>
+
+        <h3>Run locally</h3>
+        <pre class="doc-code"><code>python3 -m http.server 8000
+# open http://localhost:8000</code></pre>
+
+        <h3>Production</h3>
+        <p>The site is published at <code>https://gmork2.github.io/</code>. The first visit downloads Pyodide (a few MB); the browser caches it afterwards.</p>
+      </article>
+      <aside class="docs-sidebar-right"></aside>
+    </div>
+  </main>
+
+  <script src="js/app.js"></script>
+  <script src="js/shell.js"></script>
+  <script src="js/docs.js"></script>
+</body>
+</html>

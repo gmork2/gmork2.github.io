@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="gmork2 — limitations of the in-browser interpreter.">
+  <title>gmork2 — Limitations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="docs">
+  <main class="page">
+    <div class="docs-layout">
+      <aside class="docs-sidebar" data-docs-page="limitations"></aside>
+      <article class="docs-content docs">
+        <h1>Limitations</h1>
+        <p class="docs-lead">What the in-browser interpreter can and cannot do.</p>
+
+        <div class="doc-warning"><strong>iframe / embed:</strong> the embed snippet creates a fully isolated terminal (its own Pyodide instance and Web Worker). It does not share the API key, history, or any state with this page — each embedded page load starts fresh. The embedded terminal has no "Set key" button; use <code>set_key("...")</code> inside it.</div>
+
+        <div class="doc-warning"><strong>Async only:</strong> the browser has no blocking I/O, so every request must be awaited (<code>await</code>).</div>
+
+        <div class="doc-note"><strong>Streaming:</strong> <code>stream=True</code> is not supported by this shim yet.</div>
+
+        <div class="doc-note"><strong>Memory only:</strong> the API key and conversation live only in the current session's memory; they are lost on reload and are never persisted to disk.</div>
+
+        <div class="doc-note"><strong>CORS:</strong> the provider must allow browser requests. DeepSeek, OpenAI, OpenRouter and Groq do; self-hosted providers (e.g. Ollama) depend on your setup.</div>
+
+        <div class="doc-note"><strong>No sockets / threads:</strong> Pyodide in the browser has no raw sockets or threading; libraries that depend on them (e.g. the real <code>openai</code>/<code>anthropic</code> SDKs) cannot run here. This shim uses <code>fetch</code> instead.</div>
+      </article>
+      <aside class="docs-sidebar-right"></aside>
+    </div>
+  </main>
+
+  <script src="js/app.js"></script>
+  <script src="js/shell.js"></script>
+  <script src="js/docs.js"></script>
+</body>
+</html>

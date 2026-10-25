@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="gmork2 — OpenRouter model catalog with token prices, context and benchmarks.">
+  <title>gmork2 — Leaderboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="leaderboard">
+  <main class="page">
+    <h1 class="leaderboard-title" id="leaderboard-title">Leaderboard</h1>
+    <p class="docs-lead" id="leaderboard-desc">Browse OpenRouter models with token prices, context windows and benchmarks. Use the filters to narrow the list.</p>
+    <div class="doc-actions">
+      <button type="button" class="doc-btn export-md" id="leaderboard-export-md">Export Markdown</button>
+      <button type="button" class="doc-btn export-pdf" id="leaderboard-export-pdf">Export PDF</button>
+    </div>
+    <section class="section">
+      <div class="panel-head">
+        <div class="panel-head-left">
+          <span class="receipt-badge">openrouter.ai/api/v1/models</span>
+        </div>
+        <span class="receipt-badge" id="leaderboard-count">—</span>
+      </div>
+      <div class="controls">
+        <input id="leaderboard-search" class="search" type="search" placeholder="Search model…" aria-label="Search model">
+        <label class="sort-label">Modality
+          <select id="leaderboard-modality">
+            <option value="all" selected>All</option>
+            <option value="text">Text only</option>
+            <option value="multimodal">Multimodal</option>
+          </select>
+        </label>
+        <label class="sort-label">Sort by
+          <select id="leaderboard-sort">
+            <option value="created" selected>Recent</option>
+            <option value="intelligence">Intelligence index</option>
+            <option value="price_in">Input price</option>
+            <option value="price_out">Output price</option>
+            <option value="context">Context window</option>
+          </select>
+        </label>
+      </div>
+      <div class="filters">
+        <label class="toggle"><input type="checkbox" id="leaderboard-only-bench"> Benchmark only</label>
+        <label class="toggle"><input type="checkbox" id="leaderboard-free"> Free</label>
+      </div>
+      <div class="status-line" id="leaderboard-status">Loading models…</div>
+      <div class="table-wrap">
+        <table class="leader-table">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th class="num">Context</th>
+              <th class="num">Input $/1M</th>
+              <th class="num">Output $/1M</th>
+              <th class="num">Intel.</th>
+              <th>Modality</th>
+              <th class="num">Created</th>
+            </tr>
+          </thead>
+          <tbody id="leaderboard-body"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script src="js/shell.js"></script>
+  <script src="js/leaderboard.js"></script>
+</body>
+</html>

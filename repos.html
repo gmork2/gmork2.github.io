@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="gmork2 — repositories from the GitHub profile, updated automatically.">
+  <title>gmork2 — Repositories</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="repos">
+  <main class="page">
+    <section class="section">
+      <div class="panel-head">
+        <div class="panel-head-left">
+          <h2>Repositories</h2>
+          <span class="receipt-badge" id="repos-updated">—</span>
+        </div>
+        <span class="receipt-badge" id="repos-count">—</span>
+      </div>
+      <p class="section-note">
+        List generated automatically by GitHub Actions on every push.
+        <a href="https://github.com/gmork2?tab=repositories" target="_blank" rel="noopener">View on GitHub</a>
+      </p>
+      <div class="controls">
+        <input id="repos-search" class="search" type="search" placeholder="Search repo…" aria-label="Search repo">
+        <label class="sort-label">Language
+          <select id="repos-lang"><option value="all">All</option></select>
+        </label>
+        <label class="sort-label">Sort by
+          <select id="repos-sort">
+            <option value="updated" selected>Updated</option>
+            <option value="stars">Stars</option>
+            <option value="name">Name</option>
+            <option value="created">Created</option>
+          </select>
+        </label>
+      </div>
+      <div class="status-line" id="repos-status">Loading repositories…</div>
+      <div class="repos-grid" id="repos-grid"></div>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+  <script src="js/shell.js"></script>
+  <script src="js/repos.js"></script>
+</body>
+</html>

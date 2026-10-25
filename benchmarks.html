@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="gmork2 — intelligence index (Artificial Analysis) of OpenRouter models.">
+  <title>gmork2 — Benchmarks</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="benchmarks">
+  <main class="page">
+    <h1 class="leaderboard-title" id="benchmarks-title">Benchmarks</h1>
+    <p class="docs-lead" id="benchmarks-desc">Intelligence index (Artificial Analysis) of OpenRouter models, with external references to Artificial Analysis, LMArena and Terminal-Bench.</p>
+    <div class="doc-actions">
+      <button type="button" class="doc-btn export-md" id="benchmarks-export-md">Export Markdown</button>
+      <button type="button" class="doc-btn export-pdf" id="benchmarks-export-pdf">Export PDF</button>
+    </div>
+    <section class="section">
+      <div class="panel-head">
+        <div class="panel-head-left">
+          <span class="receipt-badge">artificial_analysis · intelligence index</span>
+        </div>
+        <span class="dot dot-violet"></span>
+      </div>
+      <div class="controls">
+        <input id="benchmark-search" class="search" type="search" placeholder="Search model…" aria-label="Search model">
+        <label class="sort-label">Show
+          <select id="benchmark-limit">
+            <option value="10" selected>Top 10</option>
+            <option value="15">Top 15</option>
+            <option value="25">Top 25</option>
+          </select>
+        </label>
+      </div>
+      <div class="status-line" id="benchmark-status">Loading benchmarks…</div>
+      <div class="bars" id="benchmark-bars"></div>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+  <script src="js/shell.js"></script>
+  <script src="js/benchmarks.js"></script>
+</body>
+</html>

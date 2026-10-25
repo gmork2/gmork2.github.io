@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="gmork2 — trending models, datasets and spaces on Hugging Face.">
+  <title>gmork2 — Trending</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="trending">
+  <main class="page">
+    <h1 class="leaderboard-title" id="trending-title">Trending</h1>
+    <p class="docs-lead" id="trending-desc">Real-time trending models, datasets and spaces from Hugging Face, ranked by activity, downloads and likes.</p>
+    <div class="doc-actions">
+      <button type="button" class="doc-btn export-md" id="trending-export-md">Export Markdown</button>
+      <button type="button" class="doc-btn export-pdf" id="trending-export-pdf">Export PDF</button>
+    </div>
+    <section class="section">
+      <div class="panel-head">
+        <div class="panel-head-left">
+          <span class="receipt-badge">huggingface.co/api/trending</span>
+        </div>
+        <span class="dot dot-cyan" id="trending-dot"></span>
+      </div>
+      <div class="tabs" id="trending-tabs" role="tablist" aria-label="Resource type">
+        <button class="tab active" data-type="model">Models</button>
+        <button class="tab" data-type="dataset">Datasets</button>
+        <button class="tab" data-type="space">Spaces</button>
+      </div>
+      <div class="controls">
+        <input id="trending-search" class="search" type="search" placeholder="Search by id or author…" aria-label="Search">
+        <label class="sort-label">Sort by
+          <select id="trending-sort">
+            <option value="default" selected>Trending</option>
+            <option value="downloads">Downloads</option>
+            <option value="likes">Likes</option>
+            <option value="recent">Recent</option>
+          </select>
+        </label>
+      </div>
+      <div class="status-line" id="trending-status">Loading trends…</div>
+      <div class="list" id="trending-list"></div>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+  <script src="js/shell.js"></script>
+  <script src="js/trending.js"></script>
+</body>
+</html>
