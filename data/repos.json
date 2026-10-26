@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-10-26T06:12:57.435119+00:00",
+  "generated_at": "2026-10-26T10:01:46.405143+00:00",
   "source": "https://api.github.com/users/gmork2/repos",
   "repositories": [
     {
       "name": "gmork2.github.io",
       "full_name": "gmork2/gmork2.github.io",
       "html_url": "https://github.com/gmork2/gmork2.github.io",
-      "description": null,
+      "description": "A real Python interpreter with an OpenAI-compatible client — write, run, and deploy AI agents entirely in the browser, for DeepSeek, OpenAI, OpenRouter and more",
       "language": "JavaScript",
       "stargazers_count": 0,
       "forks_count": 0,
@@ -14,10 +14,10 @@
       "fork": false,
       "archived": false,
       "created_at": "2026-10-21T09:37:54Z",
-      "updated_at": "2026-10-26T00:15:29Z",
-      "pushed_at": "2026-10-26T00:15:26Z",
+      "updated_at": "2026-10-26T10:01:41Z",
+      "pushed_at": "2026-10-26T10:01:37Z",
       "topics": [],
-      "homepage": null
+      "homepage": "https://gmork2.github.io/"
     },
     {
       "name": "covid-19",
@@ -106,23 +106,6 @@
       "pushed_at": "2026-10-23T23:19:41Z",
       "topics": [],
       "homepage": ""
-    },
-    {
-      "name": "opencable",
-      "full_name": "gmork2/opencable",
-      "html_url": "https://github.com/gmork2/opencable",
-      "description": null,
-      "language": null,
-      "stargazers_count": 0,
-      "forks_count": 0,
-      "open_issues_count": 2,
-      "fork": false,
-      "archived": false,
-      "created_at": "2024-09-18T17:22:34Z",
-      "updated_at": "2026-10-09T23:52:01Z",
-      "pushed_at": "2026-10-23T22:16:19Z",
-      "topics": [],
-      "homepage": null
     },
     {
       "name": "kvnm",
@@ -279,23 +262,6 @@
       "created_at": "2017-02-14T15:57:03Z",
       "updated_at": "2023-01-28T08:02:44Z",
       "pushed_at": "2021-04-28T18:53:56Z",
-      "topics": [],
-      "homepage": ""
-    },
-    {
-      "name": "prestapy",
-      "full_name": "gmork2/prestapy",
-      "html_url": "https://github.com/gmork2/prestapy",
-      "description": "Prestashop utilities",
-      "language": "Python",
-      "stargazers_count": 0,
-      "forks_count": 0,
-      "open_issues_count": 0,
-      "fork": false,
-      "archived": true,
-      "created_at": "2017-03-29T19:28:51Z",
-      "updated_at": "2023-01-28T04:21:11Z",
-      "pushed_at": "2018-08-07T18:32:39Z",
       "topics": [],
       "homepage": ""
     },
