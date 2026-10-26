@@ -87,3 +87,12 @@ python3 -m http.server 8000
 - The API key is kept in memory only (`os.environ` inside the worker); it is never persisted and is lost on reload.
 - tbench.ai (Terminal-Bench) doesn't expose a public API; the Artificial Analysis index included in
   OpenRouter is used instead, plus links to external sources (Artificial Analysis, LMArena, Terminal-Bench).
+
+## License
+
+Dual-licensed:
+
+- **Non-commercial use** — [PolyForm Noncommercial License 1.0.0](LICENSE). You may use,
+  modify, and redistribute the code for non-commercial purposes only.
+- **Commercial use** — requires a separate paid license granted with the author's
+  explicit consent. See [COMMERCIAL-LICENSE.md](COMMERCIAL-LICENSE.md) and contact the author.
